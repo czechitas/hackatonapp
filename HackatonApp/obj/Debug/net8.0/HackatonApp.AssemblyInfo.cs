@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HackatonApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+143ac1513c5c4d1f7c73efd1f5d8cfd32825f9f7")]
 [assembly: System.Reflection.AssemblyProductAttribute("HackatonApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HackatonApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
