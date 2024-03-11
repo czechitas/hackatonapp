@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 #region settings
 
 builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection(nameof(DatabaseSettings)));
@@ -17,7 +18,10 @@ builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection(na
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddDbContext<MyContext>();
+builder.Services.AddSwaggerGen();
 
 #endregion
 
@@ -32,6 +36,11 @@ using (var scope = app.Services.CreateScope())
     dbContext.Database.Migrate();
 }
 #endregion
+
+
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
