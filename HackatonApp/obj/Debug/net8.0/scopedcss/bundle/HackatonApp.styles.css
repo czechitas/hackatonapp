@@ -22,20 +22,20 @@ main[b-uel5drh1nb] {
     align-items: center;
 }
 
-    .top-row[b-uel5drh1nb]  a, .top-row[b-uel5drh1nb]  .btn-link {
-        white-space: nowrap;
-        margin-left: 1.5rem;
-        text-decoration: none;
-    }
+.top-row[b-uel5drh1nb]  a, .top-row[b-uel5drh1nb]  .btn-link {
+    white-space: nowrap;
+    margin-left: 1.5rem;
+    text-decoration: none;
+}
 
-    .top-row[b-uel5drh1nb]  a:hover, .top-row[b-uel5drh1nb]  .btn-link:hover {
-        text-decoration: underline;
-    }
+.top-row[b-uel5drh1nb]  a:hover, .top-row[b-uel5drh1nb]  .btn-link:hover {
+    text-decoration: underline;
+}
 
-    .top-row[b-uel5drh1nb]  a:first-child {
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+.top-row[b-uel5drh1nb]  a:first-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 @media (max-width: 640.98px) {
     .top-row[b-uel5drh1nb] {
@@ -89,12 +89,12 @@ main[b-uel5drh1nb] {
     z-index: 1000;
 }
 
-    #blazor-error-ui .dismiss[b-uel5drh1nb] {
-        cursor: pointer;
-        position: absolute;
-        right: 0.75rem;
-        top: 0.5rem;
-    }
+#blazor-error-ui .dismiss[b-uel5drh1nb] {
+    cursor: pointer;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.5rem;
+}
 /* _content/HackatonApp/Components/Layout/NavMenu.razor.rz.scp.css */
 .navbar-toggler[b-vfo3nu9dq8] {
     appearance: none;
@@ -115,7 +115,7 @@ main[b-uel5drh1nb] {
 
 .top-row[b-vfo3nu9dq8] {
     height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .navbar-brand[b-vfo3nu9dq8] {
@@ -149,33 +149,33 @@ main[b-uel5drh1nb] {
     padding-bottom: 0.5rem;
 }
 
-    .nav-item:first-of-type[b-vfo3nu9dq8] {
-        padding-top: 1rem;
-    }
+.nav-item:first-of-type[b-vfo3nu9dq8] {
+    padding-top: 1rem;
+}
 
-    .nav-item:last-of-type[b-vfo3nu9dq8] {
-        padding-bottom: 1rem;
-    }
+.nav-item:last-of-type[b-vfo3nu9dq8] {
+    padding-bottom: 1rem;
+}
 
-    .nav-item[b-vfo3nu9dq8]  .nav-link {
-        color: #d7d7d7;
-        background: none;
-        border: none;
-        border-radius: 4px;
-        height: 3rem;
-        display: flex;
-        align-items: center;
-        line-height: 3rem;
-        width: 100%;
-    }
+.nav-item[b-vfo3nu9dq8]  .nav-link {
+    color: #d7d7d7;
+    background: none;
+    border: none;
+    border-radius: 4px;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    line-height: 3rem;
+    width: 100%;
+}
 
 .nav-item[b-vfo3nu9dq8]  a.active {
-    background-color: rgba(255,255,255,0.37);
+    background-color: rgba(255, 255, 255, 0.37);
     color: white;
 }
 
 .nav-item[b-vfo3nu9dq8]  .nav-link:hover {
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     color: white;
 }
 

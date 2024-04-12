@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2eLVNC8o9vDAxjaKRvozvr587fDqUhfbD4ZBwlHOAV0=",
+  "Hash": "rUaK4yjsQJNoMXA3x67S9vIUvaObxL8/VRLl+k2wcDU=",
   "Source": "HackatonApp",
   "BasePath": "_content/HackatonApp",
   "Mode": "Default",
@@ -129,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.png"
+    },
+    {
+      "Identity": "/Users/lukasmuller/Documents/git/hackatonapp/HackatonApp/wwwroot/tailwind/tailwind.min.css",
+      "SourceId": "HackatonApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/lukasmuller/Documents/git/hackatonapp/HackatonApp/wwwroot/",
+      "BasePath": "_content/HackatonApp",
+      "RelativePath": "tailwind/tailwind.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/tailwind/tailwind.min.css"
     }
   ]
 }

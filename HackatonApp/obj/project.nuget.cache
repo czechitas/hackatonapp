@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "X6GpJp8sLYU+C/A+vS44hAqWoSvYf6u9KNsR1O7Y6H0V0Z/8CDWLJZx8G3G6vvDNjO4fBxyy/5UEpo7qIVhpCw==",
+  "dgSpecHash": "u677puz/vxOu2d/dbr1EuGQbGDdENsS45Hq128sLxiFICtEjwL6Ulccp2x3Xdik/9rsYbRewq7cg8769C/jh8A==",
   "success": true,
   "projectFilePath": "/Users/lukasmuller/Documents/git/hackatonapp/HackatonApp/HackatonApp.csproj",
   "expectedPackageFiles": [
@@ -26,9 +26,13 @@
     "/Users/lukasmuller/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.0/microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
     "/Users/lukasmuller/.nuget/packages/microsoft.extensions.options/8.0.0/microsoft.extensions.options.8.0.0.nupkg.sha512",
     "/Users/lukasmuller/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "/Users/lukasmuller/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
     "/Users/lukasmuller/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
     "/Users/lukasmuller/.nuget/packages/mysqlconnector/2.3.5/mysqlconnector.2.3.5.nupkg.sha512",
     "/Users/lukasmuller/.nuget/packages/pomelo.entityframeworkcore.mysql/8.0.0/pomelo.entityframeworkcore.mysql.8.0.0.nupkg.sha512",
+    "/Users/lukasmuller/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "/Users/lukasmuller/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "/Users/lukasmuller/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.5.0/swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
     "/Users/lukasmuller/.nuget/packages/system.codedom/4.4.0/system.codedom.4.4.0.nupkg.sha512",
     "/Users/lukasmuller/.nuget/packages/system.collections.immutable/6.0.0/system.collections.immutable.6.0.0.nupkg.sha512",
     "/Users/lukasmuller/.nuget/packages/system.composition/6.0.0/system.composition.6.0.0.nupkg.sha512",

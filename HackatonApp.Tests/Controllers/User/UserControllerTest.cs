@@ -10,7 +10,7 @@ namespace HackatonApp.Tests.Controllers.User
         [Test]
         public void METHOD()
         {
-            
+
         }
     }
 }

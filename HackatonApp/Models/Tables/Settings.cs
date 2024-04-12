@@ -3,16 +3,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HackatonApp.Models.Tables
 {
-    public class Users
+    public class Settings
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [MaxLength(30)]
-        public required string Email { get; set; }
+        public required string Name { get; set; }
 
-        [MaxLength(30)]
-        public required string Password { get; set; }
+        [MaxLength(512)]
+        public required string Value { get; set; }
     }
 }

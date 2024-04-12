@@ -9,8 +9,8 @@ namespace HackatonApp.Services.Core
     public class MyContext(IOptions<DatabaseSettings> databaseSettings, ILogger<MyContext> logger) : DbContext
     {
         private readonly DatabaseSettings _databaseSettings = databaseSettings.Value;
-        
-        
+
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             logger.LogDebug("Configuring database connection");
@@ -18,17 +18,17 @@ namespace HackatonApp.Services.Core
             optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-            
-        }
-
         #region Tables
-        
+
         public DbSet<Users> Users { get; set; } = null!;
-        
+
+        public DbSet<Orders> Orders { get; set; } = null!;
+
+        public DbSet<Reservations> Reservations { get; set; } = null!;
+
+        public DbSet<Rooms> Rooms { get; set; } = null!;
+
         #endregion
-        
+
     }
 }

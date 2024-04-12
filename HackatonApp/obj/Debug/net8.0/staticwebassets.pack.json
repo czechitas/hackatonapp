@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets/favicon.png"
     },
     {
+      "Id": "/Users/lukasmuller/Documents/git/hackatonapp/HackatonApp/wwwroot/tailwind/tailwind.min.css",
+      "PackagePath": "staticwebassets/tailwind/tailwind.min.css"
+    },
+    {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.HackatonApp.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
