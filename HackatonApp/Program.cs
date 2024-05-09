@@ -42,7 +42,7 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddScoped(sp =>
     new HttpClient
     {
-        BaseAddress = new Uri(builder.Configuration["FrontendUrl"] ?? "https://localhost:7063")
+        BaseAddress = new Uri(builder.Configuration["FrontendUrl"] ?? "https://localhost:8080")
     });
 
 builder.Services.AddHttpClient();
