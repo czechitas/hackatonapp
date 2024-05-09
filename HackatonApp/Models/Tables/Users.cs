@@ -11,8 +11,9 @@ namespace HackatonApp.Models.Tables
 
         [MaxLength(30)]
         public required string Email { get; set; }
-
-        [MaxLength(30)]
-        public required string Password { get; set; }
+        
+        public required byte[] Password { get; set; }
+        
+        public required UserRoles Role { get; set; } = UserRoles.User;
     }
 }

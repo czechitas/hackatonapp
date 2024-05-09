@@ -1,17 +1,43 @@
+using HackatonApp.Selectors.User;
+using HackatonApp.Services.User;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HackatonApp.Controllers.User
 {
     [ApiController]
-    [Route("[controller]")]
-    public class UserController : ControllerBase
+    [Route("api/[controller]")]
+    public class UserController(IAuthService authService) : ControllerBase
     {
-        [HttpGet]
+        /// <summary>
+        /// Login a user
+        /// </summary>
+        /// <param name="login"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [AllowAnonymous]
         [Route("login")]
-        public Task<IActionResult> Login()
+        public async Task<IActionResult> Login([FromBody]UserLoginSelector login)
         {
-            Console.WriteLine("Login");
-            return Task.FromResult<IActionResult>(Ok());
+            var user = await authService.AuthenticateUser(login);
+            if (user != null)
+                return Ok(new { token = user });
+
+            return Unauthorized();
+        }
+        
+        /// <summary>
+        /// Register a user
+        /// </summary>
+        [HttpPost]
+        [AllowAnonymous]
+        [Route("register")]
+        public async Task<IActionResult> Register([FromBody]UserRegisterSelector register)
+        {
+            if (await authService.RegisterUser(register))
+                return Ok();
+            
+            return BadRequest();
         }
     }
 }

@@ -1,0 +1,20 @@
+@page "/admin"
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject NavigationManager NavigationManager
+
+@code {
+    
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        var token = await localStorage.GetItemAsStringAsync("token");
+       
+        if (string.IsNullOrEmpty(token))
+        {
+            //redirect to login page
+            NavigationManager.NavigateTo("/");
+        }
+    }
+
+}
+
+JSI NA ADMINU a jsi přihlášen!! :))

@@ -9,6 +9,14 @@
         <Authors>Lukas Muller</Authors>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DocumentationFile>bin\Debug\net8.0\HackatonApp.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <DocumentationFile>bin\Release\net8.0\HackatonApp.xml</DocumentationFile>
+    </PropertyGroup>
+
     <ItemGroup>
         <Content Include="..\.dockerignore">
             <Link>.dockerignore</Link>
@@ -16,6 +24,8 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="Blazored.LocalStorage" Version="4.5.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.4" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.2"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.2">
             <PrivateAssets>all</PrivateAssets>
@@ -25,10 +35,14 @@
         <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.5.0"/>
         <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0"/>
         <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0"/>
+        <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.1" />
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Models\"/>
+        <Folder Include="Controllers\Order\" />
+        <Folder Include="Controllers\Reservation\" />
+        <Folder Include="Models\Enums\" />
+        <Folder Include="Selectors\Reservation\" />
     </ItemGroup>
 
 </Project>
