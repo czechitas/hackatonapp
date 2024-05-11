@@ -1,18 +1,24 @@
 @page "/admin"
-@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@using HackatonApp.Services.Core
 @inject NavigationManager NavigationManager
+@inject AuthChecker AuthChecker
+@rendermode InteractiveServer
 
 @code {
-    
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+    protected override async Task OnAfterRenderAsync( bool firstRender )
     {
-        var token = await localStorage.GetItemAsStringAsync("token");
-       
-        if (string.IsNullOrEmpty(token))
+        if( !firstRender )
         {
-            //redirect to login page
-            NavigationManager.NavigateTo("/");
+            return;
         }
+
+        var isAuthenticated = await AuthChecker.IsAuthenticatedAsync();
+       
+        if (!isAuthenticated)
+        {
+            NavigationManager.NavigateTo("/login");
+        }
+       
     }
 
 }

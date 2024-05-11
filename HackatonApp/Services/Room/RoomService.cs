@@ -43,6 +43,11 @@ namespace HackatonApp.Services.Room
             return await context.Rooms.Select(RoomSelector.Translate).ToListAsync();
         }
         
+        /// <summary>
+        /// Get room by Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<RoomSelector?> GetRoom(int id)
         {
             logger.LogDebug($"Getting room {id}");

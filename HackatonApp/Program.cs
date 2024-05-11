@@ -27,6 +27,8 @@ builder.Services.AddRazorComponents()
 builder.Services.AddTransient<IRoomService, RoomService>();
 builder.Services.AddTransient<IAuthService, AuthService>();
 
+builder.Services.AddTransient<AuthChecker>();
+
 builder.Services.AddBlazoredLocalStorage();
 
 builder.Services.AddControllers();
@@ -42,6 +44,7 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddScoped(sp =>
     new HttpClient
     {
+        Timeout = TimeSpan.FromMinutes(10),
         BaseAddress = new Uri(builder.Configuration["FrontendUrl"] ?? "https://localhost:8080")
     });
 
