@@ -15,12 +15,21 @@
                             <div>
                                 <label class="form-label font-medium text-slate-900 dark:text-white">Search : <span class="text-red-600">*</span></label>
                                 <div class="filter-search-form relative filter-border mt-2">
-                                    <i class="uil uil-search icons"></i>
-                                    <input name="name" type="text" @bind="SearchText" id="job-keyword" class="form-input filter-input-box bg-gray-50 dark:bg-slate-800 border-0" placeholder="Search your keywords">
+                                    <input name="name" type="text" @bind="SearchText" id="job-keyword" class="form-input filter-input-box bg-gray-50 dark:bg-slate-800 border-0" placeholder="Name, keyword...">
                                 </div>
                             </div>
-                            <div></div>
-                            <div></div>
+                            <div>
+                                <label class="form-label font-medium text-slate-900 dark:text-white">From : </label>
+                                <div class="filter-search-form relative filter-border mt-2">
+                                    <input name="name" type="date" id="job-from" class="form-input filter-input-box bg-gray-50 dark:bg-slate-800 border-0" placeholder="Search your keywords">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="form-label font-medium text-slate-900 dark:text-white">To : </label>
+                                <div class="filter-search-form relative filter-border mt-2">
+                                    <input name="name" type="date" id="job-to" class="form-input filter-input-box bg-gray-50 dark:bg-slate-800 border-0" placeholder="Search your keywords">
+                                </div>
+                            </div>
                             <!--
                             <div>
                                 <label for="buy-min-price" class="form-label font-medium text-slate-900 dark:text-white">Min Price :</label>
@@ -56,7 +65,8 @@
                                 </div>
                             </div>
 -->
-                            <div class="lg:mt-6">
+                            <div >
+                                <div class="py-4"></div>
                                 <a href="/search?text=@SearchText" class="btn bg-green-600 hover:bg-green-700 border-green-600 hover:border-green-700 text-white searchbtn submit-btn w-full !h-12 rounded">Search</a>
                             </div>
                         </div><!--end grid-->
