@@ -1,0 +1,102 @@
+@page "/register"
+@using HackatonApp.Selectors.User
+@inject HttpClient Http
+@rendermode InteractiveServer
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject NavigationManager NavigationManager
+
+@code {
+    private string? _email;
+    private string? _password;
+    private string? _passwordAgain;
+    
+    
+    private void UpdateHeading()
+    {
+        Console.WriteLine("Update heading");
+    }
+
+    private class LoginResponse()
+    {
+        public string Token { get; set; }
+    }
+    
+    /// <summary>
+    /// Do log in method
+    /// </summary>
+    private async void DoRegister()
+    {
+        if (_password != _passwordAgain)
+        {
+            Console.WriteLine("Passwords do not match");
+            return;
+        }
+        
+        var payload = new UserLoginSelector()
+        {
+            Email = _email,
+            Password = _password
+        };
+        var user = await Http.PostAsJsonAsync("api/user/register", payload);
+        
+        if (!user.IsSuccessStatusCode)
+        {
+            Console.WriteLine("Error" + user.StatusCode);
+            return;
+        } 
+        
+        var response = await user.Content.ReadFromJsonAsync<LoginResponse>();
+        Console.WriteLine(response.Token); 
+        
+        await localStorage.SetItemAsStringAsync("token", response.Token);
+        var name = await localStorage.GetItemAsStringAsync("token");
+        Console.WriteLine("test:" + name);
+        
+        if (user != null)
+        {
+            NavigationManager.NavigateTo("/dashboard");
+        }
+    }
+}
+
+<section class="md:h-screen py-36 flex items-center relative overflow-hidden zoom-image">
+            <div class="absolute inset-0 image-wrap z-1 bg-[url('../../assets/images/bg/01.jpg')] bg-no-repeat bg-center bg-cover"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black z-2" id="particles-snow"></div>
+            <div class="container relative z-3">
+                <div class="flex justify-center">
+                    <div class="max-w-[400px] w-full m-auto p-6 bg-white dark:bg-slate-900 shadow-md dark:shadow-gray-700 rounded-md">
+                        <h5 class="my-6 text-xl font-semibold">Register</h5>
+                        
+                            <div class="grid grid-cols-1">
+                                <div class="mb-4">
+                                    <label class="font-medium" for="LoginEmail">Email Address:</label>
+                                    <input id="LoginEmail" @bind="_email"  type="email" class="form-input mt-3" placeholder="name@example.com">
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="font-medium" for="LoginPassword">Password:</label>
+                                    <input id="LoginPassword"  @bind="_password" type="password" class="form-input mt-3" placeholder="Password:">
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="font-medium" for="LoginPasswordAgain">Password Again:</label>
+                                    <input id="LoginPasswordAgain"  @bind="_passwordAgain" type="password" class="form-input mt-3" placeholder="Password:">
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <button @onclick="DoRegister" class="btn bg-green-600 hover:bg-green-700 text-white rounded-md w-full">Register</button>
+                                </div>
+
+                                <div class="text-center">
+                                    <span class="text-slate-400 me-2">Do you have an account ?</span> <a href="/login" class="text-black dark:text-white font-bold">Login</a>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!--
+<div class="fixed bottom-3 end-3 z-10">
+    <a href="" class="back-button btn btn-icon bg-green-600 hover:bg-green-700 text-white rounded-full"><i data-feather="arrow-left" class="h-4 w-4"></i></a>
+</div> -->
+

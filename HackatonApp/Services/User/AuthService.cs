@@ -28,6 +28,11 @@ public class AuthService(MyContext context, ILogger<AuthService> logger) : IAuth
         return hashedPassword.SequenceEqual(user.Password) ? GenerateJSONWebToken(user) : null;
     }
     
+    /// <summary>
+    /// Will register a user in the database with standard info
+    /// </summary>
+    /// <param name="register"></param>
+    /// <returns></returns>
     public async Task<bool> RegisterUser(UserRegisterSelector register)
     {
         try
@@ -44,7 +49,7 @@ public class AuthService(MyContext context, ILogger<AuthService> logger) : IAuth
                 Password = System.Security.Cryptography.SHA512.HashData(Encoding.UTF8.GetBytes(register.Password)),
                 Role = UserRoles.User
             };
-            context.Users.Add(user);
+            await context.Users.AddAsync(user);
             await context.SaveChangesAsync();
             return true;
         }

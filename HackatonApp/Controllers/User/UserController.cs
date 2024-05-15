@@ -34,7 +34,8 @@ namespace HackatonApp.Controllers.User
         [Route("register")]
         public async Task<IActionResult> Register([FromBody]UserRegisterSelector register)
         {
-            if (await authService.RegisterUser(register))
+            var registerValid = await authService.RegisterUser(register);
+            if (registerValid)
                 return Ok();
             
             return BadRequest();

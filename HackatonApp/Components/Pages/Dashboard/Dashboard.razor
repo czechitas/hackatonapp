@@ -1,0 +1,26 @@
+@page "/dashboard"
+@using HackatonApp.Services.Core
+@inject NavigationManager NavigationManager
+@inject AuthChecker AuthChecker
+@rendermode InteractiveServer
+
+@code {
+protected override async Task OnAfterRenderAsync( bool firstRender )
+{
+if( !firstRender )
+{
+return;
+}
+
+var isAuthenticated = await AuthChecker.IsAuthenticatedAsync();
+
+if (!isAuthenticated)
+{
+NavigationManager.NavigateTo("/login");
+}
+
+}
+
+}
+
+JSI NA ADMINU a jsi přihlášen!! :))
