@@ -37,10 +37,14 @@ namespace HackatonApp.Services.Room
         /// Get a list of rooms
         /// </summary>
         /// <returns></returns>
-        public async Task<List<RoomSelector>> GetRooms()
+        public async Task<List<RoomSelector>> GetRooms(string? search)
         {
             logger.LogDebug("Getting rooms");
-            return await context.Rooms.Select(RoomSelector.Translate).ToListAsync();
+            if (string.IsNullOrEmpty(search))
+                return await context.Rooms.Select(RoomSelector.Translate).ToListAsync();
+            
+            return await context.Rooms.Where(x => x.Name.Contains(search))
+                .Select(RoomSelector.Translate).ToListAsync();
         }
         
         /// <summary>

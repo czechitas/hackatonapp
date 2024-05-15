@@ -1,14 +1,23 @@
 @using HackatonApp.Selectors.Room
 @inject HttpClient Http
+@rendermode InteractiveServer
 
 @code {
+    [Parameter]
+    public string? SearchText { get; set; }
+    
     private List<RoomSelector> _rooms = new();
     /// <summary>
     /// OnInitialized method to get rooms from api
     /// </summary>
     protected override void OnInitialized()
     {
-        var data = Http.GetFromJsonAsync<List<RoomSelector>>("/api/room/rooms");
+        var requestUri = "/api/room/rooms";
+        if (!string.IsNullOrEmpty(SearchText))
+        {
+            requestUri += $"?search={SearchText}";
+        }
+        var data = Http.GetFromJsonAsync<List<RoomSelector>>(requestUri);
         _rooms = data.Result ?? new List<RoomSelector>();
     }
 

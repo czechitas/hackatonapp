@@ -30,9 +30,9 @@ namespace HackatonApp.Controllers.Room
         [HttpGet("rooms")]
         [AllowAnonymous]
         //[Authorize(Roles = nameof(UserRoles.Admin))]
-        public async Task<IActionResult> ListRooms()
+        public async Task<IActionResult> ListRooms(string? search)
         {
-            var rooms = await roomService.GetRooms();
+            var rooms = await roomService.GetRooms(search);
             return Ok(rooms);
         }
         

@@ -11,7 +11,7 @@ namespace HackatonApp.Services.Room
         /// Get a list of rooms
         /// </summary>
         /// <returns></returns>
-        public Task<List<RoomSelector>> GetRooms();
+        public Task<List<RoomSelector>> GetRooms(string? search);
         public Task<RoomSelector?> GetRoom(int id);
         public Task<bool> RemoveRoom(int id);
     }
